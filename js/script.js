@@ -51,15 +51,26 @@ let quotes = [
 ***/
 const getRandomQuote =()=> Math.floor((Math.random()*quotes.length) - 1) + 1;
 
-console.log(quotes[getRandomQuote()]);
-
-
-
-
-
 /***
- * `printQuote` function
+ * @function`printQuote` function
+ * @function gonna get single item form the array 
 ***/
+
+//randomQuote will store 1-D array from 2-D array.
+let randomQuote = quotes[getRandomQuote()];
+
+const printQuote = function(){
+for (var i in randomQuote) 
+ {
+  for (var j in randomQuote[i]) 
+     {
+       randomQuote[i][j];
+     }
+ }
+}
+
+
+
 
 
 
