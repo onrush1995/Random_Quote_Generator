@@ -86,23 +86,27 @@ const getRandomQuote =()=> Math.floor((Math.random()*quotes.length) - 1) + 1;
 
 /***
  * @function`printQuote` function
- * @function gonna get single item form the array 
+ * @function get single item form the object
 ***/
 
 //randomQuote will store 1-D array from 2-D array.
 let randomQuote = quotes[getRandomQuote()];
+
 console.log(randomQuote);
 
-/*const printQuote = function(){
-for (var i in randomQuote) 
- {
-  for (var j in randomQuote{i}) 
-     {
-       randomQuote{i}{j};
-     }
- }
+let html="";
+
+for (let i=0;i<quotes.length;i++){
+  let speech = quotes[i];
+  html += 
+  `
+  <h1>${speech.quote}</h1>
+  <h3>${speech.by}</h3>
+  `
+  console.log(html);
 }
-*/
+
+
 
 
 
