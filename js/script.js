@@ -30,80 +30,69 @@ const { get } = require("https");
 
 const quotes = [
   {
-    quote: "Richness is not having many belongings, but richness is contentment of the soul.", 
-    by: "-- Mohammad (Pbuh)"
+    quote : "Richness is not having many belongings, but richness is contentment of the soul.", 
+    by : "-- Mohammad (Pbuh)"
   },
   {
-    quote:"Raise your words, not voice. It is rain that grows flowers, not thunder.",
-    by: "-- Rumi"
+    quote : "Raise your words, not voice. It is rain that grows flowers, not thunder.",
+    by : "-- Rumi"
   },
   {
-    quote:"You have to keep breaking your heart until it opens.",by: "-- Rumi"
+    quote : "You have to keep breaking your heart until it opens.",by : "-- Rumi"
   },
   {
-    quote:"The best revenge is massive success.",
-    by:"-- Frank Sinatra"
+    quote : "The best revenge is massive success.",
+    by : "-- Frank Sinatra"
   },
   {
-    quote:"Start where you are. Use what you have. Do what you can.",
-    by:"-- Arthur Ashe"
+    quote : "Start where you are. Use what you have. Do what you can.",
+    by : "-- Arthur Ashe"
   },
   {
-    quote:"The two most important days in your life are the day you are born and the day you find out why.",
-    by:"-- Mark Twain"
+    quote : "The two most important days in your life are the day you are born and the day you find out why.",
+    by : "-- Mark Twain"
   },
   {
-    quote:"Success is the sum of small efforts, repeated day-in and day-out.",
-    by:"--Robert Collier"
+    quote : "Success is the sum of small efforts, repeated day-in and day-out.",
+    by : "--Robert Collier"
   },
-  {quote:"A dream doesn't become reality through magic; it takes sweat, determination, and hard work.",
-  by:"--Colin Powell"
-  },
-  {
-    quote:"The successful warrior is the average man, with laser-like focus.",
-    by:"-- Bruce Lee"
+  {quote : "A dream doesn't become reality through magic; it takes sweat, determination, and hard work.",
+  by : "--Colin Powell"
   },
   {
-    quote:"As we look ahead into the next century, leaders will be those who empower others.",
-    by:"-- Bill Gates"
+    quote : "The successful warrior is the average man, with laser-like focus.",
+    by : "-- Bruce Lee"
   },
   {
-    quote:"Many of life's failures are people who did not realize how close they were to success when they gave up.",
-    by:"-- Thomas A. Edison"
+    quote : "As we look ahead into the next century, leaders will be those who empower others.",
+    by : "-- Bill Gates"
   },
   {
-    quote:"If you can't explain it simply, you don't understand it well enough.",
-    by:"-- Albert Einstein"}
+    quote : "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+    by : "-- Thomas A. Edison"
+  },
+  {
+    quote : "If you can't explain it simply, you don't understand it well enough.",
+    by : "-- Albert Einstein"}
 ];
-
-
 
 /***
  * `getRandomQuote` function
  * @function will print by the length of the array 
 ***/
-const getRandomQuote =()=> Math.floor((Math.random()*quotes.length) - 1) + 1;
+let getRandomQuote =()=> Math.floor((Math.random()*quotes.length) - 1) + 1;
 
 /***
- * @function`printQuote` function
+ * @function printQuote
  * @function get single item form the object
 ***/
+const randomQuote = quotes[getRandomQuote()];
 
-//randomQuote will store 1-D array from 2-D array.
-let randomQuote = quotes[getRandomQuote()];
+//Turning object into an array
+const array = Object.values(randomQuote);
 
-console.log(randomQuote);
-
-let html="";
-
-for (let i=0;i<quotes.length;i++){
-  let speech = quotes[i];
-  html += 
-  `
-  <h1>${speech.quote}</h1>
-  <h3>${speech.by}</h3>
-  `
-  console.log(html);
+for (const element of array) {
+  console.log(element);
 }
 
 
